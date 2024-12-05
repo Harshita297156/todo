@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+.main-div {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden; /* Ensures the pseudo-element doesn't overflow */
+}
+
+.main-div::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(https://marketplace.canva.com/EAFrhBZnE5g/1/0/1600w/canva-brown-aesthetic-vision-board-autumn-photo-collage-desktop-wallpaper-J2X3ycuKhJM.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(2px); /* Subtle blur effect */
+    z-index: -1; /* Keeps the background behind the content */
+}
+
+
+.center-div {
+    width: 25%;
+    height: 80vh;
+    background-color: burlywood;
+    border-radius: 15px;
+    /* 3D box shadow effect */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.6), 0px 15px 40px rgba(0, 0, 0, 0.5), 0px 20px 50px rgba(0, 0, 0, 0.4);
+    /* Smooth transition for hover effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Add a hover effect for the 3D "lift" */
+.center-div:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3), 0px 20px 40px rgba(0, 0, 0, 0.2), 0px 30px 60px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    background: linear-gradient(135deg, rgba(179, 117, 35, 0.7), rgba(245, 241, 234, 0.7)); /* Soft, blended gradient */
+    color: #5A3E36; /* Warm, earthy color for the text */
+    padding: 12px 25px; /* Spacious padding */
+    margin-bottom: 20px;
+    border-radius: 25px; /* Rounded, pill-like corners */
+    font-family: 'Poppins', sans-serif; /* Modern and elegant font */
+    font-weight: 500; /* Medium weight for a clean look */
+    font-size: 2.2rem; /* Larger size for impact */
+    letter-spacing: 2px; /* Slight letter spacing for aesthetics */
+    text-transform: capitalize; /* Softer than uppercase */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); /* Gentle shadow for depth */
+    border: 1px solid rgba(90, 62, 54, 0.3); /* Thin, translucent border */
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1); /* Light shadow for lift */
+    transition: all 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* Add a soft decorative background */
+h1::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 213, 145, 0.5), transparent);
+    transform: rotate(45deg);
+    z-index: 0;
+}
+
+/* Make sure text stays above the background effect */
+h1 span {
+    position: relative;
+    z-index: 1;
+}
+
+/* Add a subtle hover effect */
+h1:hover {
+    transform: scale(1.05); /* Slight enlargement */
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2); /* More shadow on hover */
+}
+
+
+input{
+    text-align: center;
+    height: 30px;
+    top:10px;
+    border: none;
+    background: transparent;
+    font-size: 20px;
+    font-weight: 500;
+    width: 60%;
+    border-bottom: 2px solid rgb(114, 67, 5);
+    outline :none;
+}
+
+button{
+    min-height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border-color: transparent;
+    background-color: rgb(102, 61, 7);
+    color: #fff;
+    font-size: 40px;
+    border: none;
+    outline: none;
+    margin-left: 10px;
+    box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+}
+
+button:hover{
+    background-color: rgb(158, 116, 61);
+}
+
+ol{
+    margin-top: 30px;
+    height: 300px; /* Set a fixed height for the list */
+    overflow-y: auto; /* Enable vertical scrolling */
+
+}
+
+ol li{
+    padding-left: 0px;
+    text-align: left;
+    font-size: 20px;
+    font-weight: 500;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    color: rgb(97, 57, 5);
+    text-transform: capitalize;
+}
+
+.todo_style{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+}
+
+.todo_style .fa-times {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(90, 69, 41);
+    border-radius: 50%;
+    margin: 0 15px 0 35px;
+    color: cornsilk;
+    box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.5);
+}
+
+.todo_style .fa-times:hover{
+    background-color: crimson;
+}
+.todo_style .fa-times:hover .list_style{
+    color: crimson;
+}
+
+@media (max-width:768px){
+    .center-div{
+        width: 55%;
+    }
+
+    .todo_style .fa-times{
+        margin: 0 15px 0 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    button{
+        margin-left: 5px;
+        min-height: 40px;
+        width: 40px;
+        color: #fff;
+        font-size: 30px;
+
+    }
+}
